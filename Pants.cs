@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace LinQ{
-    public class Pants
-{
-    public string Material { get; set; } 
-    public decimal Cost { get; set; }
-    public int Size { get; set; }
-
-    public Pants(string material, decimal cost, int size) 
-            
-
+    public class Pants : Clothing
     {
-        Material = material ?? throw new ArgumentNullException(nameof(material)); 
-        Cost = cost;
-        Size = size;
+        public string Material { get; set; }
+        public int Size { get; set; }
+
+        public Pants(string material, decimal cost, int size) : base(cost)
+        {
+            Material = material ?? throw new ArgumentNullException(nameof(material), "Material cannot be null");
+            Size = size;
+        }
     }
-}
-}
