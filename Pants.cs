@@ -10,7 +10,7 @@ namespace LinQ{
 
         public Pants(string material, decimal cost, int size) : base(cost)
         {
-            Material = material ?? throw new ArgumentNullException(nameof(material), "Material cannot be null");
+            Material = material ?? throw new ArgumentNullException("cannot be null");
             Size = size;
         }
     }
