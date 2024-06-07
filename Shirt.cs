@@ -10,35 +10,24 @@ namespace LinQ{
 
         public Shirt(double sleeveLength, decimal cost, int size) : base(cost)
         {
-        if (sleeveLength != null)
+           if (sleeveLength <= 0)
             {
-                SleeveLength = sleeveLength;
+                throw new ArgumentException("НЕ МОЖЕТ БЫТЬ МЕНЬШЕ 0");
             }
-            else
-            {
-                throw new ArgumentNullException("null");
-            }
-            
-            if (cost != null)
-            {
-                Cost = cost;
-            }
-            else
-            {
-                throw new ArgumentNullException( "null");
-            }
-            
-            if (size != null)
-            {
-                Size = size;
-            }
-            else
-            {
-                throw new ArgumentNullException("null");
-            }
-            
-            Shirt = ArgumentNullException
+
             SleeveLength = sleeveLength;
+            
+            if (cost <= 0)
+            {
+                throw new ArgumentException("ДОЛЖНО БЫТЬ БОЛЬШЕ 0");
+            }
+
+            Cost = cost;
+            
+            if (size <= 0)
+            {
+                throw new ArgumentException("ДОЛЖЕН БЫТЬ БОЛЬШЕ 0");
+            }
+
             Size = size;
-        }
     }
