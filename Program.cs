@@ -18,8 +18,8 @@ namespace LinQ
             };
 
             var query = clothes
-                .GroupBy(c => c.GetType().Name)
-                .Select(g => new
+                .GroupBy(c => c.GetType().Name) //руппирует коллекцию
+                .Select(g => new //создает анонимные объекты для каждой группы
                 {
                     Type = g.Key,
                     TotalCost = g.Sum(c => c.Cost)
